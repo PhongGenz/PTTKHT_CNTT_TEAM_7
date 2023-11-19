@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Staff Management</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="container">
+<h3 class="title">Lutperfume Staff Management</h3>
+<a class="submit" href="create.php">Thêm mới nhân viên</a>
+<div class="table">
+<table>
+<thead>
+<tr>
+<th>TT</th>
+<th>Họ  và  tên</th>
+<th>Địa chỉ</th>
+<th>Lương</th>
+<th>Hành động</th>
+</tr>
+ 
+</thead>
+<tbody>
+    <?php
+        //Kết  nối  CSDL
+        include("connect.php");
+        //Câu  lệnh  select
+        $sql = "SELECT * FROM staff";
+        $result = $conn->query($sql);
+        //Đổ  dữ  liệu  lên  bảng
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) { echo "
+                <tr>
+                    <td>$row[id]</td>
+                    <td>$row[hovaten]</td>
+                    <td>$row[diachi]</td>
+                    <td>$row[luong]</td>
+                    <td>
+                    <a  class='btn  primary'  href='edit.php?id=$row[id]'>Sửa</a>
+                    <a class='btn danger' style='margin-right: 0;' href='delete.php?id=$row[id]'>Xóa</a>
+                    </td>
+                </tr>
+            ";
+        }
+    }
+    ?>
+</tbody>
+</table>
+</div>
+</div>
+</body>
+</html>
