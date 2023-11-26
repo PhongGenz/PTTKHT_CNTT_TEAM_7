@@ -1,0 +1,135 @@
+﻿@model IEnumerable<TEAM7.Models.Full_Contract>
+
+@{
+    ViewBag.Title = "Viewlist";
+}
+
+<h2>Viewlist</h2>
+<link href="../Asset_FC/resources/css/axure_rp_page.css" type="text/css" rel="stylesheet" />
+<link href="../Asset_FC/data/styles.css" type="text/css" rel="stylesheet" />
+<link href="../Asset_FC/files/manage_full_contract/styles.css" type="text/css" rel="stylesheet" />
+<script src="../Asset_FC/resources/scripts/jquery-3.2.1.min.js"></script>
+<script src="../Asset_FC/resources/scripts/axure/axQuery.js"></script>
+<script src="../Asset_FC/resources/scripts/axure/globals.js"></script>
+<script src="../Asset_FC/resources/scripts/axutils.js"></script>
+<script src="../Asset_FC/resources/scripts/axure/annotation.js"></script>
+<script src="../Asset_FC/resources/scripts/axure/axQuery.std.js"></script>
+<script src="../Asset_FC/resources/scripts/axure/doc.js"></script>
+<script src="../Asset_FC/resources/scripts/messagecenter.js"></script>
+<script src="../Asset_FC/resources/scripts/axure/events.js"></script>
+<script src="../Asset_FC/resources/scripts/axure/recording.js"></script>
+<script src="../Asset_FC/resources/scripts/axure/action.js"></script>
+<script src="../Asset_FC/resources/scripts/axure/expr.js"></script>
+<script src="../Asset_FC/resources/scripts/axure/geometry.js"></script>
+<script src="../Asset_FC/resources/scripts/axure/flyout.js"></script>
+<script src="../Asset_FC/resources/scripts/axure/model.js"></script>
+<script src="../Asset_FC/resources/scripts/axure/repeater.js"></script>
+<script src="../Asset_FC/resources/scripts/axure/sto.js"></script>
+<script src="../Asset_FC/resources/scripts/axure/utils.temp.js"></script>
+<script src="../Asset_FC/resources/scripts/axure/variables.js"></script>
+<script src="../Asset_FC/resources/scripts/axure/drag.js"></script>
+<script src="../Asset_FC/resources/scripts/axure/move.js"></script>
+<script src="../Asset_FC/resources/scripts/axure/visibility.js"></script>
+<script src="../Asset_FC/resources/scripts/axure/style.js"></script>
+<script src="../Asset_FC/resources/scripts/axure/adaptive.js"></script>
+<script src="../Asset_FC/resources/scripts/axure/tree.js"></script>
+<script src="../Asset_FC/resources/scripts/axure/init.temp.js"></script>
+<script src="../Asset_FC/resources/scripts/axure/legacy.js"></script>
+<script src="../Asset_FC/resources/scripts/axure/viewer.js"></script>
+<script src="../Asset_FC/resources/scripts/axure/math.js"></script>
+<script src="../Asset_FC/resources/scripts/axure/jquery.nicescroll.min.js"></script>
+<script src="../Asset_FC/data/document.js"></script>
+<script src="../Asset_FC/files/manage_full_contract/data.js"></script>
+<script type="text/javascript"></script>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Full_Contract_Code)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Customer_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Year_Of_Birth)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SSN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Customer_Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Mobile)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date_Of_Contract)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Deposit)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Remain)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Property.Property_Code)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Full_Contract_Code)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Customer_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Year_Of_Birth)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SSN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Customer_Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mobile)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date_Of_Contract)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Deposit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Remain)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Property.Property_Code)
+            </td>
+            <td>
+                @Html.ActionLink("Add", "Add", new { id = item.ID }) |
+                @Html.ActionLink("Update", "Update", new { id = item.ID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+            </td>
+        </tr>
+    }
+
+</table>
